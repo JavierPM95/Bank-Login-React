@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Modal, Button } from 'react-bootstrap';
-import {auth} from '../Firebase.js'
+import {auth, fs, user} from '../Firebase.js'
 
 //third imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -40,10 +40,9 @@ const handleInputSignUp = (e) => {
   })
 }
 
-
 //Auth Firebase
-const signUpAuth = () => {
-  auth.createUserWithEmailAndPassword(signUpValues.emailSignUp, signUpValues.passwordSignUp)
+const signUpAuth =  () => {
+   auth.createUserWithEmailAndPassword(signUpValues.emailSignUp, signUpValues.passwordSignUp)
     .then(userCredential => {
       setSignUpValues(isvSignUp);
       handleShowModal();
@@ -51,18 +50,31 @@ const signUpAuth = () => {
   }
 
 const signInAuth = () => {
-  auth.signInWithEmailAndPassword(signUpValues.emailSignUp, signUpValues.passwordSignUp)
+   auth.signInWithEmailAndPassword(signUpValues.emailSignUp, signUpValues.passwordSignUp)
     .then(userCredential => {
-      setSignUpValues(isvSignUp);
+//      setSignUpValues(isvSignUp);
       handleShowModal();
+      console.log(user)
+      console.log('log In')
     })
   }
 
 const signOut = () => {
-  auth.signOut()
+   auth.signOut()
     .then()
+    console.log(user)
+    console.log('log out')
     }
 
+//auth.onAuthStateChanged(user => {
+//  if (user) {
+//    const logInContent = fs.collection('post').get().then((snapshot => {
+//      console.log(snapshot.docs)
+//    }))
+//  } else {
+//  console.log('user logout')
+//  }
+//})
 
   return (
    
