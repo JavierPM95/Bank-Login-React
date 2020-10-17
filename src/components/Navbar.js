@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import { Modal, Button } from 'react-bootstrap';
 import {auth, fs, user} from '../Firebase.js'
+import firebase from 'firebase/app'
 
 //third imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 
 const NavBar = () => {
@@ -75,6 +77,31 @@ const signOut = () => {
 //  console.log('user logout')
 //  }
 //})
+
+// Google Auth
+const signInGoogle = () => {
+const providerG = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(providerG)
+      .then(result => {
+        handleShowModal();
+        console.log('Google Log in')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+// Facebook Auth
+const signInFacebook = () => {
+  const providerFB = new firebase.auth.FacebookAuthProvider();
+    auth.signInWithPopup(providerFB)
+      .then(result => {
+        handleShowModal();
+        console.log('FB Log in')
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
 
   return (
    
@@ -162,20 +189,26 @@ const signOut = () => {
                 </div>
             </form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => handleShowModal()}>
-            Close
-          </Button>
+        <Modal.Footer className="container">
           {
             newUser ?
-              <Button variant="primary" onClick={() => signUpAuth()}>
+              <Button variant="primary" className="btn-block" onClick={() => signUpAuth()}>
               Create New User <FontAwesomeIcon icon={faUserPlus} />
               </Button>
             :
-            <Button variant="primary" onClick={() => signInAuth()}>
+            <Button variant="primary" className="btn-block" onClick={() => signInAuth()}>
             Log In <FontAwesomeIcon icon={faSignInAlt} />
           </Button>
           }
+          <Button style={{background: '#4285F4', border: '#4285F4'}} className="btn-block" onClick={() => signInGoogle()}>
+            Log In with Google account <FontAwesomeIcon icon={faGoogle} />
+          </Button>
+          <Button style={{background: '#3b5998', border: '#3b5998'}} className="btn-block" onClick={() => signInFacebook()}>
+            Log In with Facebook account <FontAwesomeIcon icon={faFacebookF} />
+          </Button>
+          <Button variant="secondary" className="btn-block" onClick={() => handleShowModal()}>
+            Close
+          </Button>
         </Modal.Footer>
       </Modal>
     </div>
