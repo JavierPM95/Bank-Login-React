@@ -1,0 +1,20 @@
+.mainContent h1 {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.mainContent p {
+    font-size: 1.5rem;
+    color: #777777;
+}
+
+#paymentOnline {
+    width: 31.25rem;
+    z-index: 4000;
+}
+
+#mainWaves {
+    position: fixed;
+    bottom: 0rem;
+    z-index: -1;
+}

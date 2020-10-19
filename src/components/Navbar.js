@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Modal, Button } from 'react-bootstrap';
-import {auth, fs, user} from '../Firebase.js'
+import {auth} from '../Firebase.js'
 import firebase from 'firebase/app'
 
 //third imports
@@ -18,7 +18,8 @@ const NavBar = () => {
 
 const [showModal, setShowModal] = useState(false);
 const [signUpValues, setSignUpValues] = useState(isvSignUp);
-const [newUser, setNewUser] = useState(false)
+const [newUser, setNewUser] = useState(false);
+const [userState, setUserState] = useState(null)
 
 
 //Modal Show/Hide
@@ -52,11 +53,11 @@ const signUpAuth =  () => {
   }
 
 const signInAuth = () => {
-   auth.signInWithEmailAndPassword(signUpValues.emailSignUp, signUpValues.passwordSignUp)
+   auth.signInWithEmailAndPassword(signUpValues.emailSignUp, signUpValues.passwordSignUp, )
     .then(userCredential => {
-//      setSignUpValues(isvSignUp);
+      setSignUpValues(isvSignUp);
       handleShowModal();
-      console.log(user)
+      console.log(userState)
       console.log('log In')
     })
   }
@@ -64,19 +65,17 @@ const signInAuth = () => {
 const signOut = () => {
    auth.signOut()
     .then()
-    console.log(user)
+    console.log(userState)
     console.log('log out')
     }
 
-//auth.onAuthStateChanged(user => {
-//  if (user) {
-//    const logInContent = fs.collection('post').get().then((snapshot => {
-//      console.log(snapshot.docs)
-//    }))
-//  } else {
-//  console.log('user logout')
-//  }
-//})
+auth.onAuthStateChanged(user => {
+  if (user) {
+      setUserState(user)
+  } else {
+      setUserState(null)
+  }
+})
 
 // Google Auth
 const signInGoogle = () => {
@@ -84,7 +83,8 @@ const providerG = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(providerG)
       .then(result => {
         handleShowModal();
-        console.log('Google Log in')
+        console.log(userState);
+        console.log('Google Log in');
       })
       .catch(err => {
         console.log(err)
@@ -96,7 +96,8 @@ const signInFacebook = () => {
     auth.signInWithPopup(providerFB)
       .then(result => {
         handleShowModal();
-        console.log('FB Log in')
+        console.log(userState);
+        console.log('FB Log in');
       })
       .catch(err => {
         console.log(err)
@@ -131,7 +132,11 @@ const signInFacebook = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
+              {
+                userState != null ?
+                null
+                :
+                <li className="nav-item active">
                 <a
                   className="nav-link"
                   href="#"
@@ -140,7 +145,12 @@ const signInFacebook = () => {
                   Sing up <FontAwesomeIcon icon={faUserPlus} />
                 </a>
               </li>
-              <li className="nav-item active">
+              }
+              {
+                userState != null ?
+                null
+                :
+                <li className="nav-item active">
                 <a
                   className="nav-link"
                   href="#"
@@ -149,15 +159,24 @@ const signInFacebook = () => {
                   Log In <FontAwesomeIcon icon={faSignInAlt} />
                 </a>
               </li>
-              <li className="nav-item active">
+              }
+              {
+                userState != null ?
+                <div className="">
+                  <li className="nav-item active d-inline">
                 <a
-                  className="nav-link"
+                  className="nav-link d-inline"
                   href="#"
                   onClick={() => signOut()}
                 >
                   Logout <FontAwesomeIcon icon={faSignOutAlt} />
                 </a>
               </li>
+                <img src={userState.photoURL} alt={userState.displayName} style={{borderRadius: '50%', height: '3.125rem', marginLeft: '1.25rem'}} />
+                </div>
+              :
+              null
+              }
             </ul>
           </div>
         </div>
@@ -181,15 +200,16 @@ const signInFacebook = () => {
                 <div className="form-group">
                     <label htmlFor="emailFormSign">Enter your email</label>
                     <input id="emailFormSign" name="emailSignUp" type="email" className="form-control" placeholder="example@email.com" onChange={handleInputSignUp} required />
+                    { newUser ?
                     <small id="emailFormSign" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    : <small></small>
+                    }
                 </div>
                 <div className="form-group">
                     <label htmlFor="passwordFormSign">Password</label>
                     <input type="password" name="passwordSignUp" className="form-control" id="passwordFormSign" placeholder="Password" onChange={handleInputSignUp} required/>
                 </div>
             </form>
-        </Modal.Body>
-        <Modal.Footer className="container">
           {
             newUser ?
               <Button variant="primary" className="btn-block" onClick={() => signUpAuth()}>
@@ -200,6 +220,8 @@ const signInFacebook = () => {
             Log In <FontAwesomeIcon icon={faSignInAlt} />
           </Button>
           }
+        </Modal.Body>
+        <Modal.Footer className="container">
           <Button style={{background: '#4285F4', border: '#4285F4'}} className="btn-block" onClick={() => signInGoogle()}>
             Log In with Google account <FontAwesomeIcon icon={faGoogle} />
           </Button>
