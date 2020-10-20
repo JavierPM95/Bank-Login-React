@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/http//:JavierPM95.github.io/Bank-Login-React/static/css/main.b350c969.chunk.css",
+    "main.js": "/http//:JavierPM95.github.io/Bank-Login-React/static/js/main.41428841.chunk.js",
+    "main.js.map": "/http//:JavierPM95.github.io/Bank-Login-React/static/js/main.41428841.chunk.js.map",
+    "runtime-main.js": "/http//:JavierPM95.github.io/Bank-Login-React/static/js/runtime-main.640979c4.js",
+    "runtime-main.js.map": "/http//:JavierPM95.github.io/Bank-Login-React/static/js/runtime-main.640979c4.js.map",
+    "static/css/2.854e2331.chunk.css": "/http//:JavierPM95.github.io/Bank-Login-React/static/css/2.854e2331.chunk.css",
+    "static/js/2.0bb8c2e6.chunk.js": "/http//:JavierPM95.github.io/Bank-Login-React/static/js/2.0bb8c2e6.chunk.js",
+    "static/js/2.0bb8c2e6.chunk.js.map": "/http//:JavierPM95.github.io/Bank-Login-React/static/js/2.0bb8c2e6.chunk.js.map",
+    "index.html": "/http//:JavierPM95.github.io/Bank-Login-React/index.html",
+    "precache-manifest.3deff0f587376436263384a30f359de8.js": "/http//:JavierPM95.github.io/Bank-Login-React/precache-manifest.3deff0f587376436263384a30f359de8.js",
+    "service-worker.js": "/http//:JavierPM95.github.io/Bank-Login-React/service-worker.js",
+    "static/css/2.854e2331.chunk.css.map": "/http//:JavierPM95.github.io/Bank-Login-React/static/css/2.854e2331.chunk.css.map",
+    "static/css/main.b350c969.chunk.css.map": "/http//:JavierPM95.github.io/Bank-Login-React/static/css/main.b350c969.chunk.css.map",
+    "static/js/2.0bb8c2e6.chunk.js.LICENSE.txt": "/http//:JavierPM95.github.io/Bank-Login-React/static/js/2.0bb8c2e6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.640979c4.js",
+    "static/css/2.854e2331.chunk.css",
+    "static/js/2.0bb8c2e6.chunk.js",
+    "static/css/main.b350c969.chunk.css",
+    "static/js/main.41428841.chunk.js"
+  ]
+}
