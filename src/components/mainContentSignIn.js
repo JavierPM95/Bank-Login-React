@@ -15,23 +15,6 @@ const MainContentSignIn = () => {
 
   return (
     <div>
-      <div className="bg-light">
-      <div className="container">
-        {userState != null ? (
-          <div>
-            <h1 className="pt-4 pb-2 text-center">
-              Hello,{" "}
-              {userState.displayName ? userState.displayName : userState.email}.
-            </h1>
-            <h4 className="pb-4 text-center">Great to see you again!</h4>
-          </div>
-        ) : (
-          <h3 className="py-4 text-center">
-            Hi there :) Did you see the pop-up?{" "}
-          </h3>
-        )}
-      </div>
-      </div>
       <div className="container mainContent">
       <div className="row align-items-center">
         <div className="col-md-6">
