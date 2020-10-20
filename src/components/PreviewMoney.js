@@ -6,16 +6,9 @@ const PreviewMoney = () => {
     <div>
       <div className="previewMoney">
       <div className="container">
-        <div className="row">
+        <div className="row mt-4">
           <div className="col-md-6">
             <h3>Your main account</h3>
-          </div>
-          <div className="col-md-6">
-            <h3>Your other accounts</h3>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-6">
             <div className="card">
               <img
                 className="card-img-top svgBanner"
@@ -45,6 +38,7 @@ const PreviewMoney = () => {
             </div>
           </div>
           <div className="col-md-6">
+          <h3>Your other accounts</h3>
             <div className="card">
               <img
                 className="card-img-top svgBanner"
