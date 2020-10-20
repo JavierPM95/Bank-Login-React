@@ -1,6 +1,7 @@
 {
   "name": "bank-login-react",
   "version": "0.1.0",
+  "homepage": "http//:JavierPM95.github.io/Bank-Login-React",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -20,6 +21,8 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
