@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { auth } from "../Firebase.js";
 import './mainContent.css'
+import paymentSvg from './images/paymentOnline.png';
 
 const MainContentSignIn = () => {
   const [userState, setUserState] = useState(null);
@@ -26,7 +27,7 @@ const MainContentSignIn = () => {
           </div>
         </div>
         <div className="col-md-6">
-          <img id="paymentOnline" src="/images/paymentOnline.png" alt="payment-svg"/>
+          <img id="paymentOnline" src={paymentSvg} alt="payment-svg"/>
         </div>
       </div>
       </div>

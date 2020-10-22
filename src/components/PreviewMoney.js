@@ -1,5 +1,9 @@
 import React from "react";
 import "./PreviewMoney.css";
+import bannerPesos from './images/BannerPesos.svg';
+import bannerUsd from './images/BannerUsd.svg';
+import squarePesos from './images/SquarePesos.svg';
+import squareUsd from './images/SquareUsd.svg';
 
 const PreviewMoney = () => {
   return (
@@ -12,7 +16,7 @@ const PreviewMoney = () => {
             <div className="card">
               <img
                 className="card-img-top svgBanner"
-                src="/images/BannerPesos.svg"
+                src={bannerPesos}
                 alt="Pesos-banner"
               />
               <div className="card-body">
@@ -21,7 +25,7 @@ const PreviewMoney = () => {
                     <div className="col-md-2">
                       <img
                         className="svgBox"
-                        src="/images/SquarePesos.svg"
+                        src={squarePesos}
                         alt="Pesos-Square"
                       />
                     </div>
@@ -42,7 +46,7 @@ const PreviewMoney = () => {
             <div className="card">
               <img
                 className="card-img-top svgBanner"
-                src="/images/BannerUsd.svg"
+                src={bannerUsd}
                 alt="Dolar-Banner"
               />
               <div className="card-body">
@@ -51,7 +55,7 @@ const PreviewMoney = () => {
                     <div className="col-md-2">
                       <img
                         className="svgBox"
-                        src="/images/SquareUsd.svg"
+                        src={squareUsd}
                         alt="Dolar-Square"
                       />
                     </div>
