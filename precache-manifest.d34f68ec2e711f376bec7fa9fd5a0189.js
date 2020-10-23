@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "12496b4b8f57093dbde7760fc8a1e1e9",
+    "revision": "4cf03ce32e8053eb0f483c0602c81520",
     "url": "/http//:JavierPM95.github.io/Bank-Login-React/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/http//:JavierPM95.github.io/Bank-Login-React/static/css/2.854e2331.chunk.css"
   },
   {
-    "revision": "6aa1a92a95b1e8c6e06c",
+    "revision": "f78e15b25a66b4d45f77",
     "url": "/http//:JavierPM95.github.io/Bank-Login-React/static/css/main.b350c969.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/http//:JavierPM95.github.io/Bank-Login-React/static/js/2.c9939fb5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6aa1a92a95b1e8c6e06c",
-    "url": "/http//:JavierPM95.github.io/Bank-Login-React/static/js/main.c4d53123.chunk.js"
+    "revision": "f78e15b25a66b4d45f77",
+    "url": "/http//:JavierPM95.github.io/Bank-Login-React/static/js/main.1e3a783e.chunk.js"
   },
   {
     "revision": "c8a1332137f6d96cd107",
@@ -36,15 +36,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/http//:JavierPM95.github.io/Bank-Login-React/static/media/BannerUsd.6aaae8fa.svg"
   },
   {
+    "revision": "c4721df34c3849fbf6472ff434125331",
+    "url": "/http//:JavierPM95.github.io/Bank-Login-React/static/media/PaymentOnline.c4721df3.png"
+  },
+  {
     "revision": "c67ca083a9f60f2a58ad45d04061ebbb",
     "url": "/http//:JavierPM95.github.io/Bank-Login-React/static/media/SquarePesos.c67ca083.svg"
   },
   {
     "revision": "2a1c2d9d3f1739a87c7a785212518363",
     "url": "/http//:JavierPM95.github.io/Bank-Login-React/static/media/SquareUsd.2a1c2d9d.svg"
-  },
-  {
-    "revision": "c4721df34c3849fbf6472ff434125331",
-    "url": "/http//:JavierPM95.github.io/Bank-Login-React/static/media/paymentOnline.c4721df3.png"
   }
 ]);
