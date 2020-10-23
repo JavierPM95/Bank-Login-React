@@ -1,7 +1,6 @@
 {
   "name": "bank-login-react",
   "version": "0.1.0",
-  "homepage": "http//:JavierPM95.github.io/Bank-Login-React",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
