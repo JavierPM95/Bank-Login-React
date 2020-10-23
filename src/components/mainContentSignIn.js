@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { auth } from "../Firebase.js";
 import './mainContent.css'
-import paymentSvg from './images/paymentOnline.png';
+import paymentSvg from './images/PaymentOnline.png';
 
 const MainContentSignIn = () => {
   const [userState, setUserState] = useState(null);
