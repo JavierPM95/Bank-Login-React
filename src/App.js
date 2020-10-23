@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import NavBar from "./components/Navbar";
-import MainContentSignIn from "./components/mainContentSignIn";
+import MainContentSignIn from "./components/MainContentSignIn";
 import MainDashboard from "./components/MainDashboard.js";
 import { auth } from "./Firebase.js";
-import firebase from "firebase/app";
+//import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
   const [userState, setUserState] = useState(null);
@@ -17,7 +17,7 @@ function App() {
   });
 
   return (
-    <div className="App">
+      <div className="App">
       <div>
         <NavBar />
       </div>
@@ -37,7 +37,7 @@ function App() {
                   <h6 className="pb-3 text-center">Great to see you again!</h6>
                 </div>
                 <div>
-                  <MainDashboard />
+                    <MainDashboard />
                 </div>
               </div>
             ) : (
@@ -48,7 +48,7 @@ function App() {
                   </h4>
                 </div>
                 <div>
-                  <MainContentSignIn/>
+                    <MainContentSignIn/>
                 </div>
               </div>
             )}

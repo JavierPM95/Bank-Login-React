@@ -32,7 +32,7 @@ const MainContentSignIn = () => {
       </div>
       </div>
       <div>
-        <img id="mainWaves"  src="/images/wave.svg" alt="waves"/>
+        <img id="mainWaves"  src="/images/Wave.svg" alt="waves"/>
       </div>
     </div>
   );
