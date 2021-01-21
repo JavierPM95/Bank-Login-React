@@ -44,7 +44,7 @@ function App() {
               <div>
                 <div className="bg-light">
                   <h4 className="py-3 text-center">
-                    Hi there :) Did you see the pop-up?{" "}
+                    Hi there :) What do you want to do today?{" "}
                   </h4>
                 </div>
                 <div>

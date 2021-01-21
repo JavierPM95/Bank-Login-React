@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../Firebase.js";
 import './mainContent.css'
 import paymentSvg from './images/PaymentOnline.png';
+import mainWave from './images/Wave.svg'
 
 const MainContentSignIn = () => {
   const [userState, setUserState] = useState(null);
@@ -32,7 +33,7 @@ const MainContentSignIn = () => {
       </div>
       </div>
       <div>
-        <img id="mainWaves"  src="/images/Wave.svg" alt="waves"/>
+        <img id="mainWaves"  src={mainWave} alt="waves"/>
       </div>
     </div>
   );
